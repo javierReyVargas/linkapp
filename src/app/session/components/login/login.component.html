@@ -1,1 +1,43 @@
-<p>login works!</p>
+<mat-card class="cardLogin">
+    <mat-card-title>
+        Login
+    </mat-card-title>
+
+
+    <mat-card-content>
+
+        <form fxLayout="column">
+
+            <div>
+                <mat-hint>Your Email</mat-hint>
+                <mat-form-field class="fullWidth"
+                                appearance="fill">
+                    <input type="email"
+                        matInput
+                        placeholder="Ex. pat@example.com">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-hint>Password</mat-hint>
+                <mat-form-field class="fullWidth"
+                                appearance="fill">
+                    <input matInput
+                           type="password"
+                           placeholder="******" >
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center">
+                <button class="actionLogin" 
+                        mat-raised-button>Login</button>
+            </div>
+
+        </form>
+
+
+    </mat-card-content>
+
+
+
+
+
+</mat-card>
