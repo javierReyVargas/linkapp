@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -26,14 +27,16 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   exports: [
     LogoComponent,
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }
