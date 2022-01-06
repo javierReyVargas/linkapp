@@ -4,8 +4,14 @@ import { CommonModule } from '@angular/common';
 //Components
 import { LogoComponent } from './logo/logo.component';
 
+//layout
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 //Material
 import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 
@@ -15,11 +21,13 @@ import {MatButtonModule} from '@angular/material/button';
   ],
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ],
   exports: [
     LogoComponent,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
