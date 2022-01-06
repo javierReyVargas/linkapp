@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+//Components
 import { LogoComponent } from './logo/logo.component';
+
+//Material
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -9,10 +14,12 @@ import { LogoComponent } from './logo/logo.component';
     LogoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   exports: [
-    LogoComponent
+    LogoComponent,
+    MatButtonModule
   ]
 })
 export class SharedModule { }
