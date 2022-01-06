@@ -1,17 +1,26 @@
-<div>
-    <div>
-        <span>
-            <logo></logo>
-        </span>
-        <span>logout</span>
-    </div>
+<div fxLayout="column">
 
-    <div>
+    <div fxLayout="row"
+         fxLayoutAlign="space-between start">
+        
         <div>
-            <profile></profile>
+            <logo></logo>
         </div>
         <div>
+            <button routerLink="./signup"
+                    class="buttonSession"
+                    mat-stroked-button>
+                signup
+            </button>
+        </div>
+    </div>
 
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <div fxFlex="20%">
+            <profile></profile>
+        </div>
+        <div fxFlex="20%"
+             fxLayout="column">
             <div>
                 <create-url></create-url>
             </div>
