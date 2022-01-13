@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ListUrlComponent } from './components/list-url/list-url.component';
 import { CreateUrlComponent } from './components/create-url/create-url.component';
 import { SharedModule } from '../shared/shared.module';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    //StoreModule.forFeature()
   ]
 })
 export class DashboardModule { }

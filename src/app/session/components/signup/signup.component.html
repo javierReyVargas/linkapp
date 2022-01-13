@@ -6,7 +6,8 @@
 
     <mat-card-content>
 
-        <form fxLayout="column">
+        <form fxLayout="column"
+              [formGroup]="signupFormGroup">
 
             <div>
                 <mat-hint>Full name</mat-hint>
@@ -14,6 +15,7 @@
                                 appearance="fill">
                     <input matInput
                            type="text"
+                           formControlName="fullName"
                            placeholder="Fernanda example" >
                 </mat-form-field>
             </div>
@@ -23,6 +25,7 @@
                                 appearance="fill">
                     <input type="email"
                         matInput
+                        formControlName="email"
                         placeholder="Ex. fernanda@example.com">
                 </mat-form-field>
             </div>
@@ -32,6 +35,7 @@
                                 appearance="fill">
                     <input matInput
                            type="password"
+                           formControlName="password"
                            placeholder="******" >
                 </mat-form-field>
             </div>
@@ -40,7 +44,9 @@
         <div fxLayoutAlign="center">
             <button class="actionSignup" 
                     mat-raised-button
-                    routerLink="/dashboard">SIGNUP</button>
+                    (click)="signup()"
+                    [disabled]="!this.signupFormGroup?.valid"
+                    >SIGNUP</button>
         </div>
         <div class="tcAndPP"
              fxLayoutAlign="center">

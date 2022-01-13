@@ -1,9 +1,10 @@
 <div>
     <div fxLayout="row" fxLayoutAlign="end">
-        <button routerLink="./signup"
+        <button [routerLink]="urlButton"
                 class="buttonSession"
+                (click)="goToViewAuth()"
                 mat-stroked-button>
-            signup
+            {{ textButton }} 
         </button>
     </div>
 

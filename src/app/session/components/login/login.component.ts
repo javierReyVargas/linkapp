@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppStateWithLogin } from '../../store/reducers';
+
+//actions user
+import * as actionsUser from '../../store/actions'
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'login',
@@ -7,9 +14,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginFormGroup!: FormGroup;
+
+  constructor(private store: Store<AppStateWithLogin>,
+              private router: Router,
+              private fb: FormBuilder) {
+              }
 
   ngOnInit(): void {
+    this.loginFormGroup = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+
+    this.store.select('auth')
+              .subscribe( data => {
+                this.readyLogin(data);
+              });
+  }
+
+  readyLogin(data: any) {
+
+    if (data.token !== undefined && Object.keys(data.token).length > 0) {
+      this.goToDashBoard();
+    }
+
+  }
+
+  goToDashBoard() {
+    this.router.navigate(['./dashboard']);
+  }
+
+  login() {
+    let objData = {
+      email: this.loginFormGroup?.value.email,
+      password: this.loginFormGroup?.value.password
+    }
+
+    this.store.dispatch(actionsUser.initsession(objData));
   }
 
 }

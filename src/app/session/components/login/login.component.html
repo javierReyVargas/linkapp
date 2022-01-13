@@ -6,15 +6,17 @@
 
     <mat-card-content>
 
-        <form fxLayout="column">
+        <form fxLayout="column"
+              [formGroup]="loginFormGroup">
 
             <div>
                 <mat-hint>Your Email</mat-hint>
                 <mat-form-field class="fullWidth"
                                 appearance="fill">
                     <input type="email"
-                        matInput
-                        placeholder="Ex. pat@example.com">
+                           matInput
+                           formControlName="email"
+                           placeholder="Ex. pat@example.com">
                 </mat-form-field>
             </div>
             <div>
@@ -23,13 +25,15 @@
                                 appearance="fill">
                     <input matInput
                            type="password"
+                           formControlName="password"
                            placeholder="******" >
                 </mat-form-field>
             </div>
         </form>
         <div fxLayoutAlign="center">
             <button class="actionLogin"
-                    routerLink="/dashboard"
+                    (click)="login()"
+                    [disabled]="!this.loginFormGroup?.valid"
                     mat-raised-button>Login</button>
         </div>
     </mat-card-content>
