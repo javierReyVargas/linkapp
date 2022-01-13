@@ -22,3 +22,6 @@ export const initSignupSuccess = createAction('[Signup] Init Signup success',
                         props<{fullName: string, email: string, id: string, password: string}>());
 export const initSignupError = createAction('[Signup] Init Signup error',
                                                 props<any>());
+
+
+export const logout = createAction('[Logout] logout');

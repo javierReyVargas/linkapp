@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppStateWithLogin } from '../store/reducers';
 import * as actionsUser from '../store/actions'
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -14,7 +15,8 @@ export class MainComponent implements OnInit {
   textButton: string = 'LOGIN';
   urlButton: string = 'signup';
 
-  constructor(private store: Store<AppStateWithLogin>) {
+  constructor(private store: Store<AppStateWithLogin>,
+    private router: Router) {
     this.loadInitData();
   }
 
@@ -38,10 +40,12 @@ export class MainComponent implements OnInit {
       this.textButton = 'SIGNUP';
       this.urlButton = './signup';
 
+
     } else {
 
       this.textButton = 'LOGIN';
       this.urlButton = 'login';
+
 
     }
 

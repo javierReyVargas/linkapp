@@ -1,51 +1,44 @@
 <mat-card class="cardCreateLink">
-
-
-
-
     <mat-card-content>
 
         <div>
 
-            <div>
+            <form [formGroup]="createLinkFormGroup">
+                <div>
 
-                <mat-hint>Url To Save</mat-hint>
-                <mat-form-field class="fullWidth"
-                                appearance="fill">
-                    <input matInput
-                           type="text">
-                </mat-form-field>
-
-
-                <mat-hint> Name of Url</mat-hint>
-                <mat-form-field class="fullWidth"
-                                appearance="fill">
-                    <input matInput
-                           type="text">
-                </mat-form-field>
-
-            </div>
-            <div>
-
-
-                <div fxLayoutAlign="end">
-                    <button class="actionSaveUrl" 
-                            mat-raised-button
-                            routerLink="/dashboard">ADD</button>
+                    <mat-hint>Url To Save</mat-hint>
+                    <mat-form-field class="fullWidth"
+                                    appearance="fill">
+                        <input matInput
+                               type="text"
+                               formControlName="url">
+                    </mat-form-field>
+    
+    
+                    <mat-hint> Name of Url</mat-hint>
+                    <mat-form-field class="fullWidth"
+                                    appearance="fill">
+                        <input matInput
+                               type="text"
+                               formControlName="name">
+                    </mat-form-field>
+    
                 </div>
-
-
-            </div>
-
+                <div>
+    
+    
+                    <div fxLayoutAlign="end">
+                        <button class="actionSaveUrl" 
+                                mat-raised-button
+                                routerLink="/dashboard"
+                                (click)="saveUrl()">ADD</button>
+                    </div>
+    
+    
+                </div>
+            </form>
 
 
         </div>
-
-
-
     </mat-card-content>
-
-
-
-
 </mat-card>

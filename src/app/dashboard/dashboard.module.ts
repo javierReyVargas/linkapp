@@ -8,6 +8,10 @@ import { ListUrlComponent } from './components/list-url/list-url.component';
 import { CreateUrlComponent } from './components/create-url/create-url.component';
 import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
+import { dashboardReducer } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { DashboardEffects } from './store/effects/dashboard.effects';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { StoreModule } from '@ngrx/store';
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    //StoreModule.forFeature()
+    ReactiveFormsModule,
+    StoreModule.forFeature('dashboard', dashboardReducer),
+    EffectsModule.forFeature([DashboardEffects])
   ]
 })
 export class DashboardModule { }

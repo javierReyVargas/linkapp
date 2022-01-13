@@ -11,6 +11,7 @@ import { sessionReducer } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './store/effects/users.effects';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({

@@ -87,6 +87,12 @@ const _sessionReducer = createReducer(SessioninitialState,
         error: payload
     })),
 
+    on(AuthUser.logout, (state) => ({
+        ...state,
+        isLogin: false,
+        token: ""
+    })),
+
 );
 
 export function sessionReducer(state: SessionState | undefined, action: Action) {

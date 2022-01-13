@@ -8,6 +8,7 @@
         </div>
         <div>
             <button routerLink="/login"
+                    (click)="logout()"
                     class="buttonSession"
                     mat-stroked-button>
                 LOGOUT
@@ -22,14 +23,11 @@
         </div>
         <div fxLayout="column">
             <div>
-                <create-url></create-url>
+                <create-url (addLink)="addLink($event)"></create-url>
             </div>
-            <div>
-                <list-url></list-url>
-                <list-url></list-url>
-                <list-url></list-url>
-                <list-url></list-url>
-                <list-url></list-url>
+            <div *ngFor="let dataLink of arrData">
+                <list-url [dataLink]="dataLink"
+                          (deleteLink)="deleteLink($event)"></list-url>
             </div>
         </div>
     </div>

@@ -35,14 +35,20 @@ export class LoginComponent implements OnInit {
 
   readyLogin(data: any) {
 
-    if (data.token !== undefined && Object.keys(data.token).length > 0) {
+    if (data.token !== undefined && data.token !== '') {
       this.goToDashBoard();
+    } else {
+      //this.goToLogin();
     }
 
   }
 
   goToDashBoard() {
     this.router.navigate(['./dashboard']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['./']);
   }
 
   login() {
